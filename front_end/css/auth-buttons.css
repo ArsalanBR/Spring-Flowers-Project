@@ -1,0 +1,143 @@
+/* =====================
+   استایل‌های دکمه‌های احراز هویت 
+===================== */
+
+/**
+ * تعریف متغیرهای رنگ و انیمیشن
+ */
+:root {
+    --success-color: #00a651;
+    --primary-color: #1e88e5;
+    --button-bg: #f5f5f5;
+    --button-hover-bg: #e8e8e8;
+    --button-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --button-hover-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    --button-active-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --border-radius: 6px;
+    --transition: all 0.3s ease;
+}
+
+/**
+ * استایل پایه برای دکمه‌های تأیید
+ */
+.confirm-button {
+    width: 40px;
+    height: 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: var(--button-bg);
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    transition: var(--transition);
+    box-shadow: var(--button-shadow);
+}
+
+.confirm-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-1px);
+    box-shadow: var(--button-hover-shadow);
+}
+
+.confirm-button:active {
+    transform: translateY(1px);
+    box-shadow: var(--button-active-shadow);
+}
+
+/**
+ * آیکون تیک برای دکمه‌های تأیید
+ */
+.confirm-button::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 20px;
+    border-right: 3px solid var(--success-color);
+    border-bottom: 3px solid var(--success-color);
+    transform: rotate(45deg);
+    top: 2px;
+}
+
+/**
+ * استایل دکمه تغییر کپچا
+ */
+.change-captcha-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--button-bg);
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    transition: var(--transition);
+    box-shadow: var(--button-shadow);
+}
+
+.change-captcha-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: rotate(30deg);
+    box-shadow: var(--button-hover-shadow);
+}
+
+.change-captcha-button:active {
+    transform: rotate(60deg);
+    box-shadow: var(--button-active-shadow);
+}
+
+/**
+ * آیکون دوبرگردان برای دکمه تغییر کپچا
+ */
+.change-captcha-button::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    border-right-color: transparent;
+}
+
+.change-captcha-button::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 6px 6px;
+    border-color: transparent transparent var(--primary-color) transparent;
+    top: 6px;
+    right: 10px;
+    transform: rotate(135deg);
+}
+
+/**
+ * استایل کانتینر فرم برای مرکزبندی دکمه‌ها
+ */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/**
+ * استایل‌های پاسخگو برای صفحات کوچکتر
+ */
+@media (max-width: 768px) {
+    .confirm-button {
+        width: 35px;
+        height: 25px;
+    }
+    
+    .change-captcha-button {
+        width: 25px;
+        height: 25px;
+    }
+} 
